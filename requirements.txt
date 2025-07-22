@@ -1,0 +1,8 @@
+-e .
+
+numpy
+matplotlib
+tqdm
+ipympl
+scipy
+sympy
