@@ -6,3 +6,4 @@ tqdm
 ipympl
 scipy
 sympy
+ipykernel
