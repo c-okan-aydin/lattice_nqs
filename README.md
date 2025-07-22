@@ -14,18 +14,18 @@ Please don't delete or displace the [setup](setup.py) and [init](src/__init__.py
 This code is built to perform exact calculations and variational simulations of quantum spins on a 2D lattice, using Neural Quantum States (NQS).
 
 It is primarily used to calculate the dynamics of the Heisenberg model:
-$$ H = J_0 \sum_{\{i,j\} \in X,Y} \mathbf{S}_i \cdot \mathbf{S}_j + J(t) \sum_{\{i,j\} \in Y} \mathbf{S}_i \cdot \mathbf{S}_j, $$
-where $\mathbf{S}_i$ denotes the spin operator on the $i$-th lattice site. $J_0$ defines the unit of this problem, set to $1$, and the $J(t)$ is the driving function, also in the $J_0$ units. All the indices have values in the $[1, N]$ interval, where $N$ is the number of lattice sites. Each site can be either in the $+$ or $-$ state, therefore there are $2^N$ possible configurations.
+$$H = J_0 \sum_{\{i,j\} \in X,Y} \mathbf{S}_i \cdot \mathbf{S}_j + J(t) \sum_{\{i,j\} \in Y} \mathbf{S}_i \cdot \mathbf{S}_j,$$
+where $\mathbf{S}_i$ denotes the spin operator on the $i$-th lattice site. $J_0$ defines the unit of this problem, set to $1$, and the $J(t)$ is the driving function, also in the $J_0$ units. All the indices have values in the $[1, N]$ interval, where $N$ is the number of lattice sites. Each site can be either in the $+$ or $-$ state; therefore, there are $2^N$ possible configurations.
 
 The Neural Quantum States simulations are performed with the Restricted Boltzmann Machine (RBM) neural network as a variational ansatz:
 $$\Psi (s) = \prod_{j=1}^M 2\cosh{(\theta_j (s))}.$$
 Here, $M = \alpha N$ defines the expressivity of the neural network, $s$ is a configuration of the lattice, and $\theta_j = b_j + \sum_i s_i^z w_{ij}$ includes the biases $b_j$ and weights $w_{ij}$ of the network.
 
-This repository was constructed as a supplementary to the following [paper](). In this guide, we will explain how to enable the use of the code, provide a description of the code structure, and give a few examples of its usage.
+This repository was constructed as a supplement to the following [paper](). In this guide, we will explain how to enable the use of the code, provide a description of the code structure, and give a few examples of its usage.
 
 # 💽 **Installation**
 
-To use the code, it is highly recommended that you use a python virtual environment. The calculations in this repository have been done with python version `3.10.11`.
+To use the code, it is highly recommended that you use a Python virtual environment. The calculations in this repository have been done with Python version `3.10.11`.
 
 After you've created the virtual environment, you can install all the packages from the [requirements](requirements.txt) file. If you're using **pip**, this can be done by:
 ```
@@ -41,7 +41,7 @@ This will also make the files in the `src` folder visible everywhere in the envi
 The code's main function is to perform three types of calculations:
 - exact diagonalization (ED) dynamics following the Schrödinger equation,
 - ground state optimization by gradient descent,
-- dynamics with the Time Dependent Variatioanl Principle (TDVP).
+- dynamics with the Time Dependent Variational Principle (TDVP).
 
 Additionally, it's possible to represent a series of ED wave functions with an RBM ansatz, using infidelity optimization.
 
@@ -77,7 +77,7 @@ For full documentation, please refer to the [src.html](docs/src.html) file.
 
 ## Options of note
 
-The code provides many options for performing the above mentioned calculations. Notably, some options for numerical time integration include:
+The code provides many options for performing the above-mentioned calculations. Notably, some options for numerical time integration include:
 - two integrators: `'heun'` and `'implicit_midpoint'`,
 - three different formulations: `'regularization'`, `'diagonalization'`, and `'geometric'`.
 
