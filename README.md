@@ -14,11 +14,11 @@ Please don't delete or displace the [setup](setup.py) and [init](src/__init__.py
 This code is built to perform exact calculations and variational simulations of quantum spins on a 2D lattice, using Neural Quantum States (NQS).
 
 It is primarily used to calculate the dynamics of the Heisenberg model:
-$$H = J_0 \sum_{\{i,j\} \in X,Y} \mathbf{S}_i \cdot \mathbf{S}_j + J(t) \sum_{\{i,j\} \in Y} \mathbf{S}_i \cdot \mathbf{S}_j,$$
+$H = J_0 \sum_{i,j \in X,Y} \mathbf{S}_i \mathbf{S}_j + J(t) \sum_{i,j \in Y} \mathbf{S}_i \mathbf{S}_j$,
 where $\mathbf{S}_i$ denotes the spin operator on the $i$-th lattice site. $J_0$ defines the unit of this problem, set to $1$, and the $J(t)$ is the driving function, also in the $J_0$ units. All the indices have values in the $[1, N]$ interval, where $N$ is the number of lattice sites. Each site can be either in the $+$ or $-$ state; therefore, there are $2^N$ possible configurations.
 
 The Neural Quantum States simulations are performed with the Restricted Boltzmann Machine (RBM) neural network as a variational ansatz:
-$$\Psi (s) = \prod_{j=1}^M 2\cosh{(\theta_j (s))}.$$
+$\Psi (s) = \prod_{j=1}^M 2\cosh{(\theta_j (s))}$.
 Here, $M = \alpha N$ defines the expressivity of the neural network, $s$ is a configuration of the lattice, and $\theta_j = b_j + \sum_i s_i^z w_{ij}$ includes the biases $b_j$ and weights $w_{ij}$ of the network.
 
 This repository was constructed as a supplement to the following [paper](). In this guide, we will explain how to enable the use of the code, provide a description of the code structure, and give a few examples of its usage.
