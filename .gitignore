@@ -162,13 +162,12 @@ cython_debug/
 # pdfs
 *.pdf
 
-# images
-*.png
-*.jpg
-*.svg
-
-# data jsons
+# dashboard images and data
 dashboard/**/*.json
+dashboard/**/*.svg
+dashboard/**/*.png
+dashboard/**/*.jpg
+dashboard/**/*.txt
 
-# vscode
+# vscode folder
 .vscode/
