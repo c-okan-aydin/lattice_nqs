@@ -70,7 +70,7 @@ The other three are built to enable and support the performing calculations, pro
 >- `rbm`: provides access to the Restricted Boltzmann Machine ansatz,
 >    - primary class is also called `rbm`
 
-For full documentation, please refer to the [src.html](docs/src.html) file.
+For full documentation, please refer to [this](https://hvrcan.github.io/lattice_nqs/src.html) site.
 
 ## Options of note
 
